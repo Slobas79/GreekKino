@@ -38,6 +38,8 @@
 		7B04CEC22C47E78F00960E9A /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04CEC12C47E78F00960E9A /* Data+Extension.swift */; };
 		7BD26FB12C480CE40036989D /* CountDownUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD26FB02C480CE40036989D /* CountDownUseCase.swift */; };
 		7BD26FB32C48477C0036989D /* LiveDrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD26FB22C48477C0036989D /* LiveDrawingView.swift */; };
+		7BD26FB52C4869140036989D /* ResultDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD26FB42C4869140036989D /* ResultDTO.swift */; };
+		7BD26FB72C4870490036989D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD26FB62C4870490036989D /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,8 @@
 		7B04CEC12C47E78F00960E9A /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		7BD26FB02C480CE40036989D /* CountDownUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownUseCase.swift; sourceTree = "<group>"; };
 		7BD26FB22C48477C0036989D /* LiveDrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveDrawingView.swift; sourceTree = "<group>"; };
+		7BD26FB42C4869140036989D /* ResultDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDTO.swift; sourceTree = "<group>"; };
+		7BD26FB62C4870490036989D /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +172,7 @@
 			children = (
 				7B04CE9C2C469CCA00960E9A /* UpcomingRound.swift */,
 				7B04CEBF2C47DE1300960E9A /* Round.swift */,
+				7BD26FB62C4870490036989D /* Result.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 			children = (
 				7B04CE982C4695CF00960E9A /* UpcomingRoundDTO.swift */,
 				7B04CEBB2C47DC5600960E9A /* RoundDTO.swift */,
+				7BD26FB42C4869140036989D /* ResultDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -369,7 +375,9 @@
 				7B04CEBC2C47DC5600960E9A /* RoundDTO.swift in Sources */,
 				7B04CEA02C46A66B00960E9A /* UpcomingRoundsViewModel.swift in Sources */,
 				7B04CE952C46920B00960E9A /* ReactiveNetworkingService.swift in Sources */,
+				7BD26FB72C4870490036989D /* Result.swift in Sources */,
 				7B04CE9D2C469CCA00960E9A /* UpcomingRound.swift in Sources */,
+				7BD26FB52C4869140036989D /* ResultDTO.swift in Sources */,
 				7B04CEBA2C47DB4B00960E9A /* CouponView.swift in Sources */,
 				7B04CEAA2C46D23A00960E9A /* Navigation.swift in Sources */,
 				7B04CE8E2C468B9200960E9A /* OpapGREndpoint.swift in Sources */,

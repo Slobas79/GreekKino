@@ -59,11 +59,5 @@ struct UpcomingRoundItem {
                 guard let self = self else { return }
                 self.upcomingRoundItems = self.upcomingRounds.map({UpcomingRoundItem(model: $0)})
             }
-//        cancellable = Timer.publish(every: 1, on: .main, in: .default)
-//            .autoconnect()
-//            .sink {[weak self] _ in
-//                guard let self = self else { return }
-//                self.upcomingRoundItems = self.upcomingRounds.map({UpcomingRoundItem(model: $0)})
-//            }
     }
 }

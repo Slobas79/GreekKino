@@ -10,6 +10,7 @@ import Foundation
 enum OpapGREndpoint: Endpoint {
     case upcoming(rounds: Int = 20)
     case round(drawId: UInt)
+    case results(from: Date, to: Date)
     
     var baseURL: String {
         return "https://api.opap.gr" //TO DO: load this from configuration
@@ -21,6 +22,8 @@ enum OpapGREndpoint: Endpoint {
             return "/draws/v3.0/1100/upcoming/\(rounds)"
         case .round(let id):
             return "/draws/v3.0/1100/\(id)"
+        case .results(let from, let to):
+            return "/draws/v3.0/1100/draw-date/\(DateFormatter.yyyymmdd.string(from: from))/\(DateFormatter.yyyymmdd.string(from: to))"
         }
     }
     
