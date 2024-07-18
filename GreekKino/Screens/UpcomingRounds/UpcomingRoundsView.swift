@@ -99,6 +99,6 @@ private struct Strings {
 }
 
 #Preview {
-    UpcomingRoundsView(viewModel: UpcomingRoundsViewModel(fetchUseCase: FetchUpcomingRoundsUseCaseMock(), countDownUseCase: CountDownUseCaseImpl()))
+    UpcomingRoundsView(viewModel: UpcomingRoundsViewModel(fetchUseCase: FetchUpcomingRoundsUseCaseMock(), countDownController: CountDownControllerImpl()))
 }
 

@@ -37,7 +37,7 @@ struct ResultItem: Hashable {
     private let roundId: UInt
     private let fetchUseCase: FetchRoundUseCase
     private let fetchResultsUseCase: FetchResultsUseCase
-    private let countDownUseCase: CountDownUseCase
+    private let countDownController: CountDownController
     
     private(set) var errorMessage: String?
     private var round: Round?
@@ -49,10 +49,10 @@ struct ResultItem: Hashable {
     
     private var cancellable: Cancellable?
     
-    init(roundId: UInt, fetchUseCase: FetchRoundUseCase, countDownUseCase: CountDownUseCase, fetchResultsUseCase: FetchResultsUseCase) {
+    init(roundId: UInt, fetchUseCase: FetchRoundUseCase, countDownController: CountDownController, fetchResultsUseCase: FetchResultsUseCase) {
         self.roundId = roundId
         self.fetchUseCase = fetchUseCase
-        self.countDownUseCase = countDownUseCase
+        self.countDownController = countDownController
         self.fetchResultsUseCase = fetchResultsUseCase
     }
     
@@ -82,7 +82,7 @@ struct ResultItem: Hashable {
     
     private func startTimer() {
         cancellable = nil
-        cancellable = countDownUseCase.countDownPublisher
+        cancellable = countDownController.countDownPublisher
             .receive(on: DispatchQueue.main)
             .sink {[weak self] _ in
                 guard let self = self else { return }

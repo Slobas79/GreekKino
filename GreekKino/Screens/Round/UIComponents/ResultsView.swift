@@ -53,6 +53,7 @@ struct ResultsView: View {
 private struct Const {
     static let cellW: CGFloat = 60.0
     static let cellH: CGFloat = 60.0
+    static let padding = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
 }
 
 private struct Strings {

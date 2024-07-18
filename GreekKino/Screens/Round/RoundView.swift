@@ -19,7 +19,7 @@ struct RoundView: View {
     @State private var selectedSubview: Subview = .coupon
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0.0) {
             HStack {
                 headerButton(subview: .coupon)
                 headerButton(subview: .liveDrawing)
@@ -30,11 +30,11 @@ struct RoundView: View {
                     }
                 })
             }
-            .padding()
+            .padding(Const.headerPadding)
             
             switch selectedSubview {
             case .coupon:
-                if let round = viewModel.roundInfo {
+                if viewModel.roundInfo != nil {
                     CouponView(viewModel: viewModel)
                 } else {
                     spinner()
@@ -107,6 +107,10 @@ extension Subview {
     }
 }
 
+private struct Const {
+    static let headerPadding = EdgeInsets(top: 0.0, leading: 16.0, bottom: 0.0, trailing: 16.0)
+}
+
 #Preview {
-    RoundView(viewModel: RoundViewModel(roundId: 0, fetchUseCase: FetchRoundUseCaseMock(), countDownUseCase: CountDownUseCaseImpl(), fetchResultsUseCase: FetchResultsUseCaseMock()))
+    RoundView(viewModel: RoundViewModel(roundId: 0, fetchUseCase: FetchRoundUseCaseMock(), countDownController: CountDownControllerImpl(), fetchResultsUseCase: FetchResultsUseCaseMock()))
 }

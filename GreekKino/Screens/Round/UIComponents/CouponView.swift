@@ -110,5 +110,5 @@ private struct Const {
 }
 
 #Preview {
-    CouponView(viewModel: RoundViewModel(roundId: 0, fetchUseCase: FetchRoundUseCaseMock(), countDownUseCase: CountDownUseCaseImpl(), fetchResultsUseCase: FetchResultsUseCaseMock()))
+    CouponView(viewModel: RoundViewModel(roundId: 0, fetchUseCase: FetchRoundUseCaseMock(), countDownController: CountDownControllerImpl(), fetchResultsUseCase: FetchResultsUseCaseMock()))
 }

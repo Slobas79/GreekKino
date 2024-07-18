@@ -8,11 +8,11 @@
 import Foundation
 import Combine
 
-protocol CountDownUseCase {
+protocol CountDownController {
     var countDownPublisher: AnyPublisher<Date, Never> { get }
 }
 
-class CountDownUseCaseImpl: CountDownUseCase {
+class CountDownControllerImpl: CountDownController {
     private lazy var publisher: AnyPublisher<Date, Never> = {
         Timer.publish(every: 1, on: .main, in: .default)
             .autoconnect()

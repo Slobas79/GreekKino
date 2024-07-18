@@ -26,7 +26,7 @@ struct UpcomingRoundItem {
 @Observable class UpcomingRoundsViewModel {
     private let numberOfRounds: Int = 20 //TO DO: move this to configuration
     private let fetchUseCase: FetchUpcomingRoundsUseCase
-    private let countDownUseCase: CountDownUseCase
+    private let countDownController: CountDownController
     
     
     private var upcomingRounds: [UpcomingRound] = []
@@ -35,9 +35,9 @@ struct UpcomingRoundItem {
     
     private var cancellable: Cancellable?
     
-    init(fetchUseCase: FetchUpcomingRoundsUseCase, countDownUseCase: CountDownUseCase) {
+    init(fetchUseCase: FetchUpcomingRoundsUseCase, countDownController: CountDownController) {
         self.fetchUseCase = fetchUseCase
-        self.countDownUseCase = countDownUseCase
+        self.countDownController = countDownController
     }
     
     func fetch() async {
@@ -53,7 +53,7 @@ struct UpcomingRoundItem {
     
     private func startTimer() {
         cancellable = nil
-        cancellable = countDownUseCase.countDownPublisher
+        cancellable = countDownController.countDownPublisher
             .receive(on: DispatchQueue.main)
             .sink {[weak self] _ in
                 guard let self = self else { return }

@@ -14,7 +14,7 @@ final class DependencyInjectionContainer {
     
     private(set) lazy var fetchRoundUseCase: FetchRoundUseCase = FetchRoundUseCaseImpl(repo: opapGRRepo)
     
-    private(set) lazy var countDownUseCase: CountDownUseCase = CountDownUseCaseImpl()
+    private(set) lazy var countDownController: CountDownController = CountDownControllerImpl()
     
     private(set) lazy var fetchResultsUseCase: FetchResultsUseCase = FetchResultsUseCaseImpl(repo: opapGRRepo)
 }
