@@ -9,7 +9,7 @@ import SwiftUI
 import WebKit
 
 struct LiveDrawingView: UIViewRepresentable {
-    private let urlString = "https://www.mozzartbet.com/sr/lotto-animation/26#/" 
+    private let urlString = "https://www.mozzartbet.com/sr/lotto-animation/26#/" //TO DO: Move to configuration
     
     let webView: WKWebView
         

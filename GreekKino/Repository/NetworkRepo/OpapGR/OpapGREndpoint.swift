@@ -13,7 +13,7 @@ enum OpapGREndpoint: Endpoint {
     case results(from: Date, to: Date)
     
     var baseURL: String {
-        return Configuration.apiBaseUrl
+        return "https://api.opap.gr" //TO DO: load this from configuration
     }
     
     var relativeURL: String {
