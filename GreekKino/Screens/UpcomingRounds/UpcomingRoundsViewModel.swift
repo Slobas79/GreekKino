@@ -24,7 +24,7 @@ struct UpcomingRoundItem {
 }
 
 @Observable class UpcomingRoundsViewModel {
-    private let numberOfRounds: Int = 20 //TO DO: move this to configuration
+    private let numberOfRounds: Int = Configuration.numberOfrounds
     private let fetchUseCase: FetchUpcomingRoundsUseCase
     private let countDownController: CountDownController
     
