@@ -31,6 +31,4 @@ extension DateFormatter {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
-    
-    
 }
