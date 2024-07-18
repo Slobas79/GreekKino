@@ -24,23 +24,29 @@ struct RoundView: View {
                 headerButton(subview: .coupon)
                 headerButton(subview: .liveDrawing)
                     .frame(maxWidth: .infinity, alignment: .center)
-                headerButton(subview: .results)
+                headerButton(subview: .results, action: {
+                    Task { @MainActor in
+                        await viewModel.fetchResults()
+                    }
+                })
             }
             .padding()
             
-            if nil == viewModel.roundInfo {
-                SpinnerView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .center)
-            } else {
-                switch selectedSubview {
-                case .coupon:
+            switch selectedSubview {
+            case .coupon:
+                if let round = viewModel.roundInfo {
                     CouponView(viewModel: viewModel)
-                case .liveDrawing:
-                    LiveDrawingView()
-                case .results:
-                    HStack{}
+                } else {
+                    spinner()
                 }
-                
+            case .liveDrawing:
+                LiveDrawingView()
+            case .results:
+                if let results = viewModel.resultsInfo {
+                    ResultsView(results: results)
+                } else {
+                    spinner()
+                }
             }
         }
         .background(.primaryBackground)
@@ -53,11 +59,12 @@ struct RoundView: View {
     }
     
     @ViewBuilder
-    private func headerButton(subview: Subview) -> some View {
+    private func headerButton(subview: Subview, action: (() -> Void)? = nil) -> some View {
         Button {
             if selectedSubview != subview {
                 selectedSubview = subview
             }
+            action?()
         } label: {
             VStack {
                 subview.image
@@ -67,6 +74,12 @@ struct RoundView: View {
             }
             .tint(selectedSubview != subview ? .buttonTint : .selectedButtonTint)
         }
+    }
+    
+    @ViewBuilder
+    private func spinner() -> some View {
+        SpinnerView()
+            .frame(maxWidth: .infinity, maxHeight: .infinity ,alignment: .center)
     }
 }
 
@@ -95,5 +108,5 @@ extension Subview {
 }
 
 #Preview {
-    RoundView(viewModel: RoundViewModel(roundId: 0, fetchUseCase: FetchRoundUseCaseMock(), countDownUseCase: CountDownUseCaseImpl()))
+    RoundView(viewModel: RoundViewModel(roundId: 0, fetchUseCase: FetchRoundUseCaseMock(), countDownUseCase: CountDownUseCaseImpl(), fetchResultsUseCase: FetchResultsUseCaseMock()))
 }

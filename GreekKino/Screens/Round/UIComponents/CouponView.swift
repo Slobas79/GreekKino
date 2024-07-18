@@ -48,7 +48,7 @@ struct CouponView: View {
             
             VStack {
                 Text(Strings.kolo)
-                Text("\(viewModel.roundInfo?.idTostring() ?? "")")
+                Text("\(viewModel.roundInfo?.id.toString() ?? "")")
             }
             .frame(maxWidth: 80)
             
@@ -110,5 +110,5 @@ private struct Const {
 }
 
 #Preview {
-    CouponView(viewModel: RoundViewModel(roundId: 0, fetchUseCase: FetchRoundUseCaseMock(), countDownUseCase: CountDownUseCaseImpl()))
+    CouponView(viewModel: RoundViewModel(roundId: 0, fetchUseCase: FetchRoundUseCaseMock(), countDownUseCase: CountDownUseCaseImpl(), fetchResultsUseCase: FetchResultsUseCaseMock()))
 }

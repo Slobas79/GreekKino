@@ -23,7 +23,7 @@ enum OpapGREndpoint: Endpoint {
         case .round(let id):
             return "/draws/v3.0/1100/\(id)"
         case .results(let from, let to):
-            return "/draws/v3.0/1100/draw-date/\(DateFormatter.yyyymmdd.string(from: from))/\(DateFormatter.yyyymmdd.string(from: to))"
+            return "/draws/v3.0/1100/draw-date/\(DateFormatter.yyyyMMdd.string(from: from))/\(DateFormatter.yyyyMMdd.string(from: to))"
         }
     }
     

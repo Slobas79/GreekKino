@@ -16,11 +16,11 @@ final class ViewFactory {
     
     func createUpcomingRoundsScreen() -> UpcomingRoundsView {
         return UpcomingRoundsView(viewModel:
-                                    UpcomingRoundsViewModel(fetchUseCase: diContainer.getFetchUpcomingRoundsUseCase(),
-                                                            countDownUseCase: diContainer.getCountDownUseCase()))
+                                    UpcomingRoundsViewModel(fetchUseCase: diContainer.fetchUpcomingRoundsUseCase,
+                                                            countDownUseCase: diContainer.countDownUseCase))
     }
     
     func createRoundScreen(roundId: UInt) -> RoundView {
-        return RoundView(viewModel: RoundViewModel(roundId: roundId, fetchUseCase: diContainer.getFetchRoundUseCase(), countDownUseCase: diContainer.getCountDownUseCase()))
+        return RoundView(viewModel: RoundViewModel(roundId: roundId, fetchUseCase: diContainer.fetchRoundUseCase, countDownUseCase: diContainer.countDownUseCase, fetchResultsUseCase: diContainer.fetchResultsUseCase))
     }
 }

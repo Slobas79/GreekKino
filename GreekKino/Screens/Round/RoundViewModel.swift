@@ -13,10 +13,6 @@ struct RoundInfo {
     let countDownString: String
     let id: UInt
     
-    func idTostring() -> String {
-        return String(id)
-    }
-    
     init(model: Round) {
         timeString = DateFormatter.HHmm.string(from: model.drawTime)
         let time = model.drawTime.timeIntervalSince(Date())
@@ -25,9 +21,22 @@ struct RoundInfo {
     }
 }
 
+struct ResultItem: Hashable {
+    let timeString: String
+    let id: UInt
+    let numbers: [Int]
+    
+    init(model: Result) {
+        timeString = DateFormatter.ddMMHHmm.string(from: model.drawTime)
+        id = model.drawId
+        numbers = model.numbers
+    }
+}
+
 @Observable class RoundViewModel {
     private let roundId: UInt
     private let fetchUseCase: FetchRoundUseCase
+    private let fetchResultsUseCase: FetchResultsUseCase
     private let countDownUseCase: CountDownUseCase
     
     private(set) var errorMessage: String?
@@ -35,12 +44,16 @@ struct RoundInfo {
     private(set) var roundInfo: RoundInfo?
     var selectedNumbers: [Int] = []
     
+    private var results: [Result]?
+    private(set) var resultsInfo: [ResultItem]?
+    
     private var cancellable: Cancellable?
     
-    init(roundId: UInt, fetchUseCase: FetchRoundUseCase, countDownUseCase: CountDownUseCase) {
+    init(roundId: UInt, fetchUseCase: FetchRoundUseCase, countDownUseCase: CountDownUseCase, fetchResultsUseCase: FetchResultsUseCase) {
         self.roundId = roundId
         self.fetchUseCase = fetchUseCase
         self.countDownUseCase = countDownUseCase
+        self.fetchResultsUseCase = fetchResultsUseCase
     }
     
     func fetchRound() async {
@@ -51,6 +64,17 @@ struct RoundInfo {
             }
             
             startTimer()
+        } catch {
+            errorMessage = "Dogodila se greska"
+        }
+    }
+    
+    func fetchResults() async {
+        do {
+            results = try await fetchResultsUseCase.fetch(from: Date(), to: Date())
+            if let res = results {
+                resultsInfo = res.map({ResultItem(model: $0)})
+            }
         } catch {
             errorMessage = "Dogodila se greska"
         }

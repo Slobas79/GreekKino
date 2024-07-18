@@ -10,7 +10,7 @@ import Foundation
 protocol OpapGRRepo {
     func fetchUpcomingRounds(roundsNumber: Int) async throws -> [UpcomingRoundDTO]
     func fetchRound(drawId: UInt) async throws -> RoundDTO
-    func fetchResults(from: Date, to: Date) async throws -> [ResultDTO]
+    func fetchResults(from: Date, to: Date) async throws -> ResultsDTO
 }
 
 class OpapGRRepoImpl: OpapGRRepo {
@@ -28,7 +28,7 @@ class OpapGRRepoImpl: OpapGRRepo {
         return try await asyncNetService.request(RoundDTO.self, requestable: OpapGREndpoint.round(drawId: drawId))
     }
     
-    func fetchResults(from: Date, to: Date) async throws -> [ResultDTO] {
-        return try await asyncNetService.request([ResultDTO].self, requestable: OpapGREndpoint.results(from: from, to: to))
+    func fetchResults(from: Date, to: Date) async throws -> ResultsDTO {
+        return try await asyncNetService.request(ResultsDTO.self, requestable: OpapGREndpoint.results(from: from, to: to))
     }
 }

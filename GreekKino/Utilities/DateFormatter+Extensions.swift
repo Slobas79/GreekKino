@@ -14,15 +14,23 @@ extension DateFormatter {
         return formatter
     }()
     
+    static let ddMMHHmm: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM. HH:mm"
+        return formatter
+    }()
+    
     static let HHmmss: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
         return formatter
     }()
     
-    static let yyyymmdd: DateFormatter = {
+    static let yyyyMMdd: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-mm-dd"
+        formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
+    
+    
 }

@@ -12,7 +12,6 @@ protocol FetchUpcomingRoundsUseCase {
 }
 
 class FetchUpcomingRoundsUseCaseImpl: FetchUpcomingRoundsUseCase {
-    private let numberOfMilisecondsPerSec: Double = 1000.00
     private let repo: OpapGRRepo
     
     init(repo: OpapGRRepo) {
@@ -22,7 +21,7 @@ class FetchUpcomingRoundsUseCaseImpl: FetchUpcomingRoundsUseCase {
     func fetch(roundsNumber: Int) async throws -> [UpcomingRound] {
         return try await repo.fetchUpcomingRounds(roundsNumber: roundsNumber)
             .map({
-                UpcomingRound(drawId: $0.drawId, drawTime: Date(timeIntervalSince1970: $0.drawTime/numberOfMilisecondsPerSec))
+                UpcomingRound(drawId: $0.drawId, drawTime: Date(timeIntervalSince1970: $0.drawTime.toNumberOfSeconds()))
             })
     }
 }

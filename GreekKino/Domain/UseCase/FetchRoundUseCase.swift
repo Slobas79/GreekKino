@@ -12,7 +12,6 @@ protocol FetchRoundUseCase {
 }
 
 class FetchRoundUseCaseImpl: FetchRoundUseCase {
-    private let numberOfMilisecondsPerSec: Double = 1000.00
     private let repo: OpapGRRepo
     
     init(repo: OpapGRRepo) {
@@ -21,7 +20,7 @@ class FetchRoundUseCaseImpl: FetchRoundUseCase {
     
     func fetch(drawId: UInt) async throws -> Round {
         let value = try await repo.fetchRound(drawId: drawId)
-        return Round(drawId: value.drawId, drawTime: Date(timeIntervalSince1970: value.drawTime/numberOfMilisecondsPerSec))
+        return Round(drawId: value.drawId, drawTime: Date(timeIntervalSince1970: value.drawTime.toNumberOfSeconds()))
     }
 }
 

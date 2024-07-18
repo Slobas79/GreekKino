@@ -10,18 +10,11 @@ import Foundation
 final class DependencyInjectionContainer {
     private lazy var opapGRRepo: OpapGRRepo = OpapGRRepoImpl(asyncNetService: AsyncNetworkingServiceImpl())
     
-    private lazy var fetchUpcomingRoundsUseCase: FetchUpcomingRoundsUseCase = FetchUpcomingRoundsUseCaseImpl(repo: opapGRRepo)
-    func getFetchUpcomingRoundsUseCase() -> FetchUpcomingRoundsUseCase {
-        return fetchUpcomingRoundsUseCase
-    }
+    private(set) lazy var fetchUpcomingRoundsUseCase: FetchUpcomingRoundsUseCase = FetchUpcomingRoundsUseCaseImpl(repo: opapGRRepo)
     
-    private lazy var fetchRoundUseCase: FetchRoundUseCase = FetchRoundUseCaseImpl(repo: opapGRRepo)
-    func getFetchRoundUseCase() -> FetchRoundUseCase {
-        return fetchRoundUseCase
-    }
+    private(set) lazy var fetchRoundUseCase: FetchRoundUseCase = FetchRoundUseCaseImpl(repo: opapGRRepo)
     
-    private lazy var countDownUseCase: CountDownUseCase = CountDownUseCaseImpl()
-    func getCountDownUseCase() -> CountDownUseCase {
-        return countDownUseCase
-    }
+    private(set) lazy var countDownUseCase: CountDownUseCase = CountDownUseCaseImpl()
+    
+    private(set) lazy var fetchResultsUseCase: FetchResultsUseCase = FetchResultsUseCaseImpl(repo: opapGRRepo)
 }
