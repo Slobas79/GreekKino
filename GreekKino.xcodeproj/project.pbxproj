@@ -95,7 +95,6 @@
 		7B04CEC12C47E78F00960E9A /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		7B3B89692C49708C00208B4E /* FontSizeBoundaryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeBoundaryModifier.swift; sourceTree = "<group>"; };
 		7B3B896E2C49831F00208B4E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		7B3B896F2C49839500208B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7B3B89702C4983F600208B4E /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		7BB109F32C4949E700532616 /* UpcomingRoundItemTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingRoundItemTest.swift; sourceTree = "<group>"; };
 		7BB109F52C49520B00532616 /* CountDownControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownControllerTests.swift; sourceTree = "<group>"; };
@@ -151,7 +150,6 @@
 		7B04CE6E2C46865300960E9A /* GreekKino */ = {
 			isa = PBXGroup;
 			children = (
-				7B3B896F2C49839500208B4E /* Info.plist */,
 				7B04CE7E2C4686C000960E9A /* Domain */,
 				7B04CE802C4686DE00960E9A /* Repository */,
 				7B04CE812C46871000960E9A /* DependencyInjection */,
