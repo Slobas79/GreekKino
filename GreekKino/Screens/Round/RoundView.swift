@@ -50,6 +50,7 @@ struct RoundView: View {
             }
         }
         .background(.primaryBackground)
+        .modifier(FontSizeBoundaryModifier())
         .onAppear {
             guard nil == viewModel.roundInfo else { return }
             Task { @MainActor in

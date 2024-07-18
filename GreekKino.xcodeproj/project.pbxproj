@@ -36,6 +36,7 @@
 		7B04CEBE2C47DDCD00960E9A /* FetchRoundUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04CEBD2C47DDCD00960E9A /* FetchRoundUseCase.swift */; };
 		7B04CEC02C47DE1300960E9A /* Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04CEBF2C47DE1300960E9A /* Round.swift */; };
 		7B04CEC22C47E78F00960E9A /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B04CEC12C47E78F00960E9A /* Data+Extension.swift */; };
+		7B3B896A2C49708C00208B4E /* FontSizeBoundaryModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3B89692C49708C00208B4E /* FontSizeBoundaryModifier.swift */; };
 		7BB109F42C4949E700532616 /* UpcomingRoundItemTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB109F32C4949E700532616 /* UpcomingRoundItemTest.swift */; };
 		7BB109F62C49520B00532616 /* CountDownControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB109F52C49520B00532616 /* CountDownControllerTests.swift */; };
 		7BD26FB12C480CE40036989D /* CountDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD26FB02C480CE40036989D /* CountDownController.swift */; };
@@ -91,6 +92,7 @@
 		7B04CEBD2C47DDCD00960E9A /* FetchRoundUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchRoundUseCase.swift; sourceTree = "<group>"; };
 		7B04CEBF2C47DE1300960E9A /* Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Round.swift; sourceTree = "<group>"; };
 		7B04CEC12C47E78F00960E9A /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		7B3B89692C49708C00208B4E /* FontSizeBoundaryModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeBoundaryModifier.swift; sourceTree = "<group>"; };
 		7BB109F32C4949E700532616 /* UpcomingRoundItemTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingRoundItemTest.swift; sourceTree = "<group>"; };
 		7BB109F52C49520B00532616 /* CountDownControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownControllerTests.swift; sourceTree = "<group>"; };
 		7BD26FB02C480CE40036989D /* CountDownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownController.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				7B04CEB12C471A9300960E9A /* SpinnerView.swift */,
+				7B3B89692C49708C00208B4E /* FontSizeBoundaryModifier.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				7B04CEA62C46AFA400960E9A /* DependencyInjectionContainer.swift in Sources */,
 				7B04CEBC2C47DC5600960E9A /* RoundDTO.swift in Sources */,
 				7B04CEA02C46A66B00960E9A /* UpcomingRoundsViewModel.swift in Sources */,
+				7B3B896A2C49708C00208B4E /* FontSizeBoundaryModifier.swift in Sources */,
 				7B04CE952C46920B00960E9A /* ReactiveNetworkingService.swift in Sources */,
 				7BD26FB72C4870490036989D /* Result.swift in Sources */,
 				7B04CE9D2C469CCA00960E9A /* UpcomingRound.swift in Sources */,

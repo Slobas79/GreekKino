@@ -40,6 +40,7 @@ struct UpcomingRoundsView: View {
                 }
             }
             .background(.primaryBackground)
+            .modifier(FontSizeBoundaryModifier())
             .navigationDestination(for: Screen.self) { screen in
                 navigation.viewFor(screen: screen)
             }
